@@ -7,6 +7,19 @@
     <h2>{{item.title}}</h2>
     <div>
         {{item.content}}
+        {% if current_user.is_authenticated %}
+        <a href="dreams" class="btn btn-secondary">Записать сон</a>
+        {% endif %}
+        {% if current_user.is_authenticated and current_user == item.user %}
+        <div>
+            <a href="/dreams/{{ item.id }}" class="btn btn-warning">
+                Изменить
+            </a>
+            <a href="/dreams_delete/{{ item.id }}" class="btn btn-danger">
+                Удалить
+            </a>
+        </div>
+        {% endif %}
     </div>
     <div>
         Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
