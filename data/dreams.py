@@ -6,7 +6,7 @@ from .db_session import SqlAlchemyBase
 
 
 class Dreams(SqlAlchemyBase):
-    __tablename__ = 'news'
+    __tablename__ = 'dreams'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)

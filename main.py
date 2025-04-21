@@ -83,7 +83,7 @@ def main():
             dreams.title = form.title.data
             dreams.content = form.content.data
             dreams.is_private = form.is_private.data
-            current_user.news.append(dreams)
+            current_user.dreams.append(dreams)
             db_sess.merge(current_user)
             db_sess.commit()
             return redirect('/')
