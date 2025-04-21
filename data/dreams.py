@@ -19,3 +19,6 @@ class Dreams(SqlAlchemyBase):
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id"))
     user = orm.relationship('User')
+    categories = orm.relationship("Category",
+                                  secondary="association",
+                                  backref="dreams")
